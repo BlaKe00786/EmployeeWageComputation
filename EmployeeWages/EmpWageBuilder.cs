@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EmployeeWages
 {
-    public class Class1
+    public class EmpWageBuilder
     {
         static void Main(string[] args)
         {
