@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections;
 namespace EmployeeWages
 {
     public class EmpWageBuilderArray : IEmployeeWage
@@ -6,14 +8,10 @@ namespace EmployeeWages
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
         private int numOfCompany = 0;
-        private CompanyEmpWage[] companyEmpWageArray;
-        public EmpWageBuilderArray()
-        {
-            this.companyEmpWageArray = new CompanyEmpWage[5];
-        }
+        List<CompanyEmpWage> companyEmpWageArray = new List<CompanyEmpWage>();
         public void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
-            companyEmpWageArray[this.numOfCompany] = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
+            companyEmpWageArray.Add(new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth));
             numOfCompany++;
         }
         public void computeEmpWage()
