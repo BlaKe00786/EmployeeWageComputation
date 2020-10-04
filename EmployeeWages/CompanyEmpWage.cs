@@ -28,4 +28,10 @@ namespace EmployeeWages
             return "Total Emp Wage for company: " + this.company + " is: " + this.totalEmpWage;
         }
     }
+    public interface IEmployeeWage
+    {
+        public void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth);
+        public int computeEmpWage(CompanyEmpWage companyEmpWage);
+        public void computeEmpWage();
+    }
 }
